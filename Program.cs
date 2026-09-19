@@ -9,10 +9,13 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMem"));
 
+builder.Services.AddScoped<IPlatformRepo, PlatformRepo>(); //регистрация зависимости - Реализацией интерфейса IPlatformRepo теперь является PlatformRepo
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
+PrepDb.PrerPopulation(app);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
