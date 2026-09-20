@@ -13,14 +13,16 @@ builder.Services.AddScoped<IPlatformRepo, PlatformRepo>(); //регистрац�
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 PrepDb.PrerPopulation(app);
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+
+app.MapOpenApi();
+
+app.MapControllers();
 
 app.UseHttpsRedirection();
 
