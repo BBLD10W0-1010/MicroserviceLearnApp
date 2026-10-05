@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:5126/api/platforms
+method: GET
+order: 4226109150958638
