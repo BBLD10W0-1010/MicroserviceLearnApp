@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: http://localhost:5126/api/platforms
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Docker\",\r
+
+    \    \"publisher\": \"Docker\",\r
+
+    \    \"cost\": \"Free\"\r
+
+    }"
+order: 4466837154408609
