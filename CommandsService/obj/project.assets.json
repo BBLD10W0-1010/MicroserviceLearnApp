@@ -2234,11 +2234,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\GitHub\\MicroserviceLearnApp\\CommandsService\\CommandService.csproj",
+      "projectUniqueName": "B:\\Github\\MicroserviceLearnApp\\CommandsService\\CommandService.csproj",
       "projectName": "CommandService",
-      "projectPath": "B:\\GitHub\\MicroserviceLearnApp\\CommandsService\\CommandService.csproj",
+      "projectPath": "B:\\Github\\MicroserviceLearnApp\\CommandsService\\CommandService.csproj",
       "packagesPath": "C:\\Users\\m.buchelnikov\\.nuget\\packages\\",
-      "outputPath": "B:\\GitHub\\MicroserviceLearnApp\\CommandsService\\obj\\",
+      "outputPath": "B:\\Github\\MicroserviceLearnApp\\CommandsService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
