@@ -8,10 +8,10 @@ namespace PlatformService.Profiles
     {
         public PlatformsProfile()
         {
-            // Source -> target!! it`s not a source <-> target!!!
+            // Source -> target!! it`s not a source <-> target
             CreateMap<Platform, PlatformReadDto>();
             CreateMap<PlatformCreateDto, Platform>(); //it will map fields from PCreDto to Platform
-            
+            CreateMap<PlatformReadDto, PlatformPublishedDto>();
         }
     }
 }

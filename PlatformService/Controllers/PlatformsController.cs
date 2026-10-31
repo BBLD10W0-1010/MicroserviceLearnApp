@@ -65,8 +65,6 @@ namespace PlatformService.Controllers
             {
                 Console.WriteLine($"Could not send synchronously: {ex.Message}");
             }
-
-
             
             return CreatedAtRoute(nameof(GetPlatformById), new {Id = platformReadDto.Id}, platformReadDto); 
         }
