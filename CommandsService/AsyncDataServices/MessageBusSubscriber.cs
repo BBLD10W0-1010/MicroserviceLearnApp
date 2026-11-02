@@ -20,6 +20,7 @@ namespace CommandsService.AsyncDataServices
             {
                 HostName = _configuration["RabbitMQHost"], Port = int.Parse(_configuration["RabbitMQPort"])
             };
+            _connection = factory.CreateConnectionAsync();
         }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
