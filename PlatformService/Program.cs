@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
 using PlatformService.SyncDataService.Http;
+using PlatformService.AsyncDataServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ else
 }
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>(); //регистрация зависимости - Реализацией интерфейса IPlatformRepo теперь является PlatformRepo
 
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers();
@@ -32,6 +35,8 @@ Console.WriteLine(
 var app = builder.Build();
 
 PrepDb.PrerPopulation(app, builder.Environment.IsProduction());
+
+await app.Services.GetRequiredService<IMessageBusClient>().ConnectAsync();
 
 app.MapOpenApi();
 
