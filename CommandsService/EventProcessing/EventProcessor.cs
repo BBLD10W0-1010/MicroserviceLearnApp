@@ -23,7 +23,7 @@ namespace CommandsService.EventProcessing
             switch (eventType)
             {
                 case EventType.PlatformPublished:
-                    //todo
+                    AddPlatform(message);
                     break;
                 default:
                     //todo
@@ -58,13 +58,14 @@ namespace CommandsService.EventProcessing
                 {
                     repo.CreatePlatform(plat);
                     repo.SaveChanges();
+                    System.Console.WriteLine($"--> Platform added... ");
                 }
                 else
                 {
                     System.Console.WriteLine($"--> Platform already exists... ");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 System.Console.WriteLine($"--> could not add Platform to DB {ex.Message}");
             }
